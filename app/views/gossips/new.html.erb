@@ -1,19 +1,12 @@
 
-<h1>New Article</h1>
+<h1>Créer un nouveau Gossip!</h1>
+
+<p> Balance tous tes gossips concernant les membres de THP! </p>
 
 
-<%= form_with scope: :article, local: true do |form| %>
-  <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </p>
- 
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
+<h1>Nouveau Gossip</h1>
+<%= form_for @gossip, url: {action: "create"} do |gossip_form| %>
+  <p><%= gossip_form.label :content %>:
+  <%= gossip_form.text_field :content %></p>
+  <p><%= gossip_form.submit "Créer" %></p>
 <% end %>
